@@ -19,3 +19,9 @@ jobs:
           testFilePath: warehouse-test.jmx
           outputReportsFolder: reports/
           args: "--loglevel INFO"
+
+      - name: Upload File
+        uses: actions/upload-artifact@v2
+        with:
+          name: reports
+          path: reports/
