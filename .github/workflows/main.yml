@@ -1,0 +1,21 @@
+name: Test JMeter Action
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
+
+jobs:
+  action_build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run JMeter Action Load Testing
+        uses: rbhadti94/apache-jmeter-action@v0.5.0
+        with:
+          testFilePath: warehouse-test.jmx
+          outputReportsFolder: reports/
+          args: "--loglevel INFO"
