@@ -38,7 +38,7 @@ jobs:
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          if [ -f api/requirements.txt ]; then pip install -r fastapi-server/requirements.txt; fi
+          if [ -f fastapi-server/requirements.txt ]; then pip install -r fastapi-server/requirements.txt; fi
 
       - name: Run fastapi web-server
         run: |
